@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_login">
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="pansitosapp.mx.login.Login"
+        android:label="Login"
+        tools:layout="@layout/login">
+        <action
+            android:id="@+id/nav_to_register"
+            app:destination="@id/nav_register" />
+
+        <action
+            android:id="@+id/nav_to_client_menu"
+            app:destination="@id/nav_client_menu" />
+
+        <action
+            android:id="@+id/nav_to_admin_menu"
+            app:destination="@id/nav_admin_menu" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="pansitosapp.mx.register.Register"
+        android:label="Register"
+        tools:layout="@layout/register">
+        <action
+            android:id="@+id/nav_to_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_client_menu"
+        android:name="pansitosapp.mx.clientmenu.ClientMenu"
+        android:label="Menu Cliente"
+        tools:layout="@layout/client_menu">
+        <action
+            android:id="@+id/nav_to_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/nav_to_perfil_usuario"
+            app:destination="@id/nav_perfil_usuario" />
+        <action
+            android:id="@+id/nav_to_mapa"
+            app:destination="@id/nav_mapa" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_admin_menu"
+        android:name="pansitosapp.mx.adminmenu.AdminMenu"
+        android:label="Menu Admin"
+        tools:layout="@layout/admin_menu">
+        <action
+            android:id="@+id/nav_to_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/nav_to_perfil_usuario"
+            app:destination="@id/nav_perfil_usuario" />
+        <action
+            android:id="@+id/nav_to_productos"
+            app:destination="@id/nav_productos" />
+        <action
+            android:id="@+id/nav_to_pedidos_pendientes"
+            app:destination="@id/nav_pedidos_pendientes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_perfil_usuario"
+        android:name="pansitosapp.mx.perfilusuario.PerfilUsuario"
+        android:label="Perfil de Usuario"
+        tools:layout="@layout/perfil_usuario">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_productos"
+        android:name="pansitosapp.mx.productos.Productos"
+        android:label="Productos"
+        tools:layout="@layout/productos">
+        <action
+            android:id="@+id/nav_to_edit_productos"
+            app:destination="@id/nav_edit_productos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_edit_productos"
+        android:name="pansitosapp.mx.productos.EditProducto"
+        android:label="Editor de Panes"
+        tools:layout="@layout/edit_productos">
+        <action
+            android:id="@+id/nav_to_productos"
+            app:destination="@id/nav_productos" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mapa"
+        android:name="pansitosapp.mx.mapa.Mapa"
+        android:label="Mapa"
+        tools:layout="@layout/mapa">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pedidos_pendientes"
+        android:name="pansitosapp.mx.pedidospendientes.PedidosPendientes"
+        android:label="Pedidos"
+        tools:layout="@layout/pedidos_pendientes">
+        <action
+            android:id="@+id/nav_to_pedido_detalles"
+            app:destination="@id/nav_pedido_detalles" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pedido_detalles"
+        android:name="pansitosapp.mx.pedidodetalles.PedidoDetalles"
+        android:label="Detalles"
+        tools:layout="@layout/pedido_detalles">
+        <action
+            android:id="@+id/nav_to_pedidos_pendientes"
+            app:destination="@id/nav_pedidos_pendientes" />
+        <action
+            android:id="@+id/nav_to_mapa_entrega"
+            app:destination="@id/nav_mapa_entrega" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mapa_entrega"
+        android:name="pansitosapp.mx.mapaentrega.MapaEntrega"
+        android:label="Entrega"
+        tools:layout="@layout/mapa_entrega">
+    </fragment>
+</navigation>
